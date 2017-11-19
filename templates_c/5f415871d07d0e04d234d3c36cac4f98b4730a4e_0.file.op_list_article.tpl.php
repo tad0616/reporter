@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-16 15:49:24
+/* Smarty version 3.1.30, created on 2017-11-19 09:44:47
   from "C:\Users\tad\Dropbox\www\reporter\templates\op_list_article.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a0db3848a71a9_06273568',
+  'unifunc' => 'content_5a11528f7e1873_05436333',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5f415871d07d0e04d234d3c36cac4f98b4730a4e' => 
     array (
       0 => 'C:\\Users\\tad\\Dropbox\\www\\reporter\\templates\\op_list_article.tpl',
-      1 => 1510845634,
+      1 => 1511084641,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a0db3848a71a9_06273568 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a11528f7e1873_05436333 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="img-container">
     <div class="container">
@@ -76,6 +76,8 @@ $_smarty_tpl->tpl_vars['article'] = $__foreach_article_0_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
+
+        <?php echo $_smarty_tpl->tpl_vars['bar']->value;?>
 
     </div>
 </div><?php }

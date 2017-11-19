@@ -2,7 +2,7 @@
 
 function getPageBar($sql = "", $show_num = 20, $page_list = 10, $to_page = "", $url_other = "")
 {
-    global $mysqli;
+    global $db;
     //die('PHP_SELF:'.$_SERVER['PHP_SELF']);
     if (empty($show_num)) {
         $show_num = 20;
@@ -12,7 +12,7 @@ function getPageBar($sql = "", $show_num = 20, $page_list = 10, $to_page = "", $
         $page_list = 10;
     }
 
-    $result = $mysqli->query($sql) or die($mysqli->connect_error);
+    $result = $db->query($sql) or die($db->connect_error);
     $total  = $result->num_rows;
 
     $navbar = new PageBar($total, $show_num, $page_list);

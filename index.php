@@ -27,11 +27,16 @@ require_once 'footer.php';
 function list_article()
 {
     global $db, $smarty;
+    include_once "PageBar.php";
 
-    $sql    = "SELECT * FROM `article` ORDER BY `update_time` DESC LIMIT 0,9";
-    $result = $db->query($sql) or die($db->error);
-    $all    = [];
-    $i      = 0;
+    $sql     = "SELECT * FROM `article` ORDER BY `update_time` DESC";
+    $PageBar = getPageBar($sql, 6, 10);
+    $bar     = $PageBar['bar'];
+    $sql     = $PageBar['sql'];
+    $total   = $PageBar['total'];
+    $result  = $db->query($sql) or die($db->error);
+    $all     = [];
+    $i       = 0;
     while ($data = $result->fetch_assoc()) {
         $all[$i]            = $data;
         $all[$i]['summary'] = mb_substr(strip_tags($data['content']), 0, 60);
@@ -39,4 +44,6 @@ function list_article()
     }
     // die(var_export($all));
     $smarty->assign('all', $all);
+    $smarty->assign('bar', $bar);
+    $smarty->assign('total', $total);
 }
