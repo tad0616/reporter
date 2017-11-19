@@ -28,6 +28,6 @@
         {foreachelse}
             <h1>尚無內容</h1>
         {/foreach}
-        {$bar}
-    </div>
+    </div> 
+    {$bar}
 </div>
