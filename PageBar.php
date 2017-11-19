@@ -27,19 +27,13 @@ function getPageBar($sql = "", $show_num = 20, $page_list = 10, $to_page = "", $
 
     $mybar       = $navbar->makeBar();
     $main['bar'] = "
-      <div class='row'>
-        <div class='col-md-12'>
-          <div class='text-center'>
-            <nav>
-              <ul class='pagination'>
-                {$mybar['left']}
-                {$mybar['center']}
-                {$mybar['right']}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
+        <nav aria-label='Page navigation example'>
+            <ul class='pagination justify-content-center'>
+            {$mybar['left']}
+            {$mybar['center']}
+            {$mybar['right']}
+            </ul>
+        </nav>
       ";
 
     $main['sql']   = $sql . $mybar['sql'];
@@ -183,13 +177,13 @@ class PageBar
             if ($i == $this->current) {
                 $bar_center = "
                   {$bar_center}
-                  <li class='active'>
-                    <a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}' title='{$i}'>{$i}<span class='sr-only'>(current)</span></a>
+                  <li class='page-item active'>
+                    <a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}'  class='page-link' title='{$i}'>{$i}<span class='sr-only'>(current)</span></a>
                   </li>";
             } else {
                 $bar_center .= "
-                  <li>
-                    <a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}' title='{$i}'>{$i}</a>
+                  <li class='page-item'>
+                    <a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}'  class='page-link' title='{$i}'>{$i}</a>
                   </li>";
             }
             $i++;
@@ -199,23 +193,23 @@ class PageBar
         // 往前跳一頁
         if ($this->current <= 1) {
             //$bar_left=$bar_first="";
-            $bar_left  = "<li class='disabled'><a href='#'>&lsaquo;</a></li>";
-            $bar_first = "<li class='disabled'><a href='#'>&laquo;</a></li>";
+            $bar_left  = "<li class='page-item disabled'><a href='#' class='page-link'>&lsaquo;</a></li>";
+            $bar_first = "<li class='page-item disabled'><a href='#' class='page-link'>&laquo;</a></li>";
         } else {
             $i         = $this->current - 1;
-            $bar_left  = "<li><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}' title='回上頁'>&lsaquo;</a></li>";
-            $bar_first = "<li><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}=1{$loadtime}' title='回第一頁' >&laquo;</a></li>";
+            $bar_left  = "<li class='page-item'><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}'  class='page-link' title='回上頁'>&lsaquo;</a></li>";
+            $bar_first = "<li class='page-item'><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}=1{$loadtime}'  class='page-link' title='回第一頁' >&laquo;</a></li>";
         }
 
         // 往後跳一頁
         if ($this->current >= $this->pTotal) {
             //$bar_right=$bar_last="";
-            $bar_right = "<li class='disabled'><a href='#'>&rsaquo;</a></li>";
-            $bar_last  = "<li class='disabled'><a href='#'>&raquo;</a></li>";
+            $bar_right = "<li class='page-item disabled'><a href='#' class='page-link'>&rsaquo;</a></li>";
+            $bar_last  = "<li class='page-item disabled'><a href='#' class='page-link'>&raquo;</a></li>";
         } else {
             $i         = $this->current + 1;
-            $bar_right = "<li><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}' title='下一頁'>&rsaquo;</a></li>";
-            $bar_last  = "<li><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$this->pTotal}{$loadtime}' title='上一頁' >&raquo;</a></li>";
+            $bar_right = "<li class='page-item'><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$i}{$loadtime}' class='page-link' title='下一頁'>&rsaquo;</a></li>";
+            $bar_last  = "<li class='page-item'><a href='{$this->to_page}{$this->query_str}{$this->glue}{$this->url_page}={$this->pTotal}{$loadtime}' class='page-link' title='上一頁' >&raquo;</a></li>";
         }
 
         // 往前跳一整個頁框(層)
