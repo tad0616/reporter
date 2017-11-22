@@ -13,14 +13,14 @@
             <h1 class="pt-5">巷集談-街道新聞</h1>
             
             <form class="form-signup" id="usersignup" name="usersignup" method="post" action="createuser.php">
-                <h2 class="form-signup-heading">Register</h2>
+                <h2 class="form-signup-heading">註冊</h2>
                 <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
                 <input name="email" id="email" type="text" class="form-control" placeholder="Email">
                 <br>
                 <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
                 <input name="password2" id="password2" type="password" class="form-control" placeholder="Repeat Password">
 
-                <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">送出</button>
 
                 <div id="message"></div>
             </form>

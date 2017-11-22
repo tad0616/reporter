@@ -6,20 +6,13 @@
 </head>
 
 <body>
-
-    <div class="img-container">
+ {include file="nav.tpl"}
         <div class="container">
-             {include file="nav.tpl"}
-            <h1 class="pt-5">巷集談-街道新聞</h1>
-            
-            {$msg}
+             {$msg}         
         </div>
-    </div>
-
 
     {include file="footer.tpl"}
     
-
 </body>
 
 </html>
