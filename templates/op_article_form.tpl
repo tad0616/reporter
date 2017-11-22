@@ -1,3 +1,6 @@
+<script src="js/languages/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css">
 <script src="ckeditor/ckeditor.js"></script>
 <h2 class="my-3">編輯文章</h2>
 <form action="admin.php" method="post" enctype="multipart/form-data">
